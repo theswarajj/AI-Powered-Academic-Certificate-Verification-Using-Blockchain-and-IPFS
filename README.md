@@ -1,39 +1,51 @@
 # 🎓 AI-Powered Academic Certificate Verification Using Blockchain & IPFS
 
-> A secure, full-stack, decentralized verification ecosystem that prevents academic credential fraud using **Deep Learning (EasyOCR)**, **Explainable AI (Random Forest + SHAP)**, **Decentralized Storage (IPFS via Pinata)**, and **Smart Contracts (Ethereum / Polygon)**.
+> **Tech Stack:** Python, React, Solidity, IPFS, OCR, SHAP, Machine Learning
+
+---
+
+## 📌 Executive Summary & Key Highlights
+
+- **Blockchain-Based Verification Platform:** Implemented **dual SHA-256 hashing** (raw file hash + canonical text content hash), **Solidity smart contracts**, and **decentralized IPFS storage** (via Pinata) to guarantee certificate authenticity, tamper-evidence, and permanent accessibility.
+- **Premium React Web Application with 3 Roles:**
+  - **Visitors / Verifiers:** Instant real-time verification of certificate images/PDFs and camera QR code scanning with animated progress.
+  - **Universities / Institutions:** Secure dashboard to issue on-chain certificates, pin assets to IPFS, manage student profiles & passwords, and revoke invalid credentials.
+  - **Students:** Authenticated portal to view all issued academic credentials, inspect blockchain verification proofs, and securely download original certificates.
+- **20-Feature Voting Ensemble & Explainable AI:** Built a **20-feature voting ensemble** combined with deep learning OCR (`EasyOCR`) and **weighted risk scoring** to detect subtle forgery, font inconsistencies, and layout anomalies; explained every individual verdict with **SHAP** feature attribution charts.
 
 ---
 
 > [!IMPORTANT]
 > ### 📍 WHERE THE FINAL PROJECT LIVES (Read First!)
-> If you are looking to run, inspect, or test the **complete working application**, everything is organized inside the **`FINAL_PROJECT`** folder:
+> If you are looking to inspect, run, or review the **completed full-stack application**, everything is organized inside the **`FINAL_PROJECT`** folder:
 >
 > - **🖥️ Backend Server (`FINAL_PROJECT/final_backend/`):**
 >   - The entry point is **[`FINAL_PROJECT/final_backend/app.py`](file:///c:/Users/swrjk/OneDrive/Desktop/hafiz/AI-Powered%20Academic%20Certificate%20Verification%20Using%20Blockchain%20and%20IPFS/FINAL_PROJECT/final_backend/app.py)**.
->   - It is a Python Flask + Socket.IO server running on port `5000` that handles user authentication (JWT), student management, real-time WebSocket progress streaming, OCR extraction, AI model inferences, IPFS pinning, and blockchain interactions.
+>   - A Python Flask + Socket.IO server running on port `5000` that coordinates JWT authentication, student password management, real-time WebSocket layer streaming, OCR feature extraction, the 20-feature ML voting ensemble, IPFS pinning, and Ethereum/Polygon smart contract verification.
 >
 > - **🌐 Frontend Application (`FINAL_PROJECT/frontend/`):**
->   - The frontend is located in **[`FINAL_PROJECT/frontend/`](file:///c:/Users/swrjk/OneDrive/Desktop/hafiz/AI-Powered%20Academic%20Certificate%20Verification%20Using%20Blockchain%20and%20IPFS/FINAL_PROJECT/frontend/)**.
->   - Built with **React 18, Vite, and Tailwind CSS** running on port `5173`. It includes a responsive dashboard, live multi-layer verification progress, an animated Risk Gauge, SHAP feature importance charts, instant QR code scanner, and institutional issuance forms.
+>   - The client application is located in **[`FINAL_PROJECT/frontend/`](file:///c:/Users/swrjk/OneDrive/Desktop/hafiz/AI-Powered%20Academic%20Certificate%20Verification%20Using%20Blockchain%20and%20IPFS/FINAL_PROJECT/frontend/)**.
+>   - Built with **React 18, Vite, and Tailwind CSS** running on port `5173`. Features a responsive UI, real-time WebSocket progress badges, an animated radial Risk Gauge, interactive SHAP bar charts, a webcam QR code scanner, and institutional issuance workflows.
 >
-> - **⛓️ Smart Contract & Blockchain (`blockchain-smart-contract/blockchain/`):**
->   - The Solidity smart contract (`CertificateRegistry.sol`), Hardhat deployment scripts, and automated test suites live in **[`blockchain-smart-contract/blockchain/`](file:///c:/Users/swrjk/OneDrive/Desktop/hafiz/AI-Powered%20Academic%20Certificate%20Verification%20Using%20Blockchain%20and%20IPFS/blockchain-smart-contract/blockchain/)**.
+> - **⛓️ Smart Contract Suite (`blockchain-smart-contract/blockchain/`):**
+>   - Contains the Solidity registry contract (`CertificateRegistry.sol`), Hardhat deployment scripts (`deploy.js`), and 12 automated unit tests (`CertificateRegistry.test.js`).
 >
 > - **🧪 Standalone Research & Training Scripts (Root Directory):**
->   - The Python files in the root folder (`ai_pipeline.py`, `feature_extraction.py`, `train_model.py`, `predict_and_explain.py`, etc.) were developed during the initial research, data synthesis, and model training phases before packaging everything into the full-stack `FINAL_PROJECT`.
+>   - The scripts in the root (`ai_pipeline.py`, `feature_extraction.py`, `train_model.py`, `predict_and_explain.py`, etc.) were developed during initial R&D and model training before being integrated into `FINAL_PROJECT`.
 
 ---
 
 ## 💡 Why I Built This Project
 
-Traditional paper certificates and static PDF files are easily forged with modern graphic editing tools. Employers and universities spend weeks manually verifying credentials through third-party background check agencies. 
+Traditional paper certificates and static PDF files are easily forged with modern image editing software. Employers, academic institutions, and embassies spend weeks manually verifying credentials through third-party background verification agencies.
 
-Existing blockchain verification systems only store a file hash on-chain — if a certificate has slightly altered text, formatting, or font inconsistencies, a simple hash check says "invalid" without explaining *why* or detecting *what* was modified.
+Existing blockchain verification systems typically only store a single static file hash on-chain. If an attacker tampers with the student's name, degree, or GPA, a standard hash check simply flags the file as "unrecognized" without explaining *what* was modified or *why*.
 
 To solve this, I designed and developed this **hybrid AI + Blockchain architecture**:
-1. **Explainable AI Layer:** Uses computer vision and machine learning to analyze the visual layout, font bounding boxes, OCR text integrity, and semantic fields of a certificate. If something is suspicious, it generates a **SHAP (SHapley Additive exPlanations)** score to explain *exactly* which features look tampered with.
-2. **IPFS Decentralized Storage:** Permanently stores immutable, tamper-evident copies of original certificates on IPFS through Pinata Cloud.
-3. **Smart Contract Registry:** Records cryptographic hashes and metadata on the Ethereum/Polygon blockchain, creating an immutable, publicly verifiable record of truth that cannot be altered or deleted by anyone — even the issuing institution.
+1. **AI Anomaly Detection with SHAP Explainability:** Uses computer vision and a 20-feature voting ensemble to analyze visual layout, text density, bounding box alignments, and character spacing. It produces a weighted risk score and generates a SHAP attribution chart so verifiers can visually see what triggered suspicion.
+2. **Dual SHA-256 Cryptographic Hashing:** Computes both the *raw file hash* (verifying identical visual document bytes) and the *content hash* (verifying extracted normalized text fields), catching both graphic forgery and textual manipulation.
+3. **IPFS Decentralized Storage:** Permanently stores tamper-evident copies on IPFS via Pinata Cloud.
+4. **Smart Contract Registry:** Records hashes and issuance metadata on Ethereum Sepolia / Polygon Amoy, creating a trustless, publicly verifiable record that cannot be altered or deleted.
 
 ---
 
@@ -65,13 +77,13 @@ To solve this, I designed and developed this **hybrid AI + Blockchain architectu
 │   LAYER 1 & 2:   │             │     LAYER 3:     │             │     LAYER 4:     │
 │  AI & OCR Engine │             │   IPFS Storage   │             │ Smart Contract   │
 ├──────────────────┤             ├──────────────────┤             ├──────────────────┤
-│ • Preprocessing  │             │ • Compute SHA-256│             │ • Polygon Amoy / │
-│ • EasyOCR Parser │             │   Cryptographic  │             │   Sepolia Network│
-│ • Feature Vector │             │   File Hash      │             │ • Query Registry │
-│   Extraction     │             │ • IPFS Gateway   │             │ • Check Status & │
-│ • Random Forest  │             │   Verification   │             │   Revocation     │
-│   Tamper Model   │             │ • Pinata Cloud   │             │ • Match On-chain │
-│ • SHAP Explainer │             │   Pinning        │             │   Metadata       │
+│ • Preprocessing  │             │ • Dual SHA-256   │             │ • Polygon Amoy / │
+│ • EasyOCR Parser │             │   (File Hash +   │             │   Sepolia Network│
+│ • 20-Feature     │             │    Content Hash) │ • Query Registry │
+│   Voting Ensemble│             │ • IPFS Gateway   │ • Check Status & │
+│ • Weighted Risk  │             │   Verification   │   Revocation     │
+│   Scoring        │             │ • Pinata Cloud   │ • Match On-chain │
+│ • SHAP Explainer │             │   Pinning        │   Metadata       │
 └──────────────────┘             └──────────────────┘             └──────────────────┘
 ```
 
@@ -79,14 +91,35 @@ To solve this, I designed and developed this **hybrid AI + Blockchain architectu
 
 ## 🔍 How the 4-Layer Verification Works
 
-When a certificate is uploaded to `app.py`, the backend runs it through four sequential verification stages and streams live progress to the frontend over WebSockets:
+When a certificate is uploaded to `app.py`, the backend executes four sequential verification stages and streams real-time status events to the frontend via WebSockets:
 
 | Layer | Stage | What It Does Under The Hood |
 | :--- | :--- | :--- |
-| **Layer 1** | **OCR & Preprocessing** | Cleans the image, adjusts contrast, and uses `EasyOCR` to extract text blocks, confidence scores, and bounding box coordinates for all certificate fields (Student Name, Register Number, Degree, Issue Date). |
-| **Layer 2** | **AI Tamper Detection** | Calculates a 14-dimensional feature vector (OCR text density, spacing variance, box alignment anomalies, aspect ratios) and evaluates it against our trained Random Forest model (`model_v2.pkl`). It generates a **Risk Score (0–100%)** and computes **SHAP values** explaining which specific features triggered suspicion. |
-| **Layer 3** | **IPFS Verification** | Generates a deterministic SHA-256 cryptographic digest of the raw certificate bytes. Checks if the corresponding decentralized file exists on the IPFS network via Pinata Cloud gateway. |
-| **Layer 4** | **Blockchain Audit** | Queries the deployed `CertificateRegistry.sol` smart contract on Ethereum Sepolia or Polygon Amoy using `Web3.py`. Confirms whether the certificate hash is registered by an authorized institution, matches on-chain records, and has not been revoked. |
+| **Layer 1** | **OCR & Preprocessing** | Image cleanup and contrast optimization. Uses `EasyOCR` to detect text blocks, confidence scores, and bounding box coordinates for key fields (Student Name, Register Number, Degree, Issue Date). |
+| **Layer 2** | **20-Feature Voting Ensemble & SHAP** | Evaluates a **20-feature engineered vector** (text density variance, box alignment anomalies, font height ratios, line spacing deviations) across a machine learning voting ensemble. Computes a **weighted risk score (0–100%)** and calculates **SHAP feature attribution values** to explain the exact drivers of the verdict. |
+| **Layer 3** | **Dual SHA-256 Hashing & IPFS** | Computes **Dual SHA-256 hashes**: the raw binary *file hash* and the canonical *content hash*. Resolves the document against Pinata Cloud IPFS gateways to verify byte-level decentralized storage integrity. |
+| **Layer 4** | **Blockchain Smart Contract Audit** | Interacts with `CertificateRegistry.sol` via `Web3.py`. Confirms that the certificate was minted by an authorized university address, validates timestamps, and checks whether the credential is active or revoked. |
+
+---
+
+## 👥 User Roles & Features
+
+### 1. 🏛️ Universities / Institutions
+- **Issue On-Chain Certificates:** Upload certificate images and student data; the system automatically computes dual SHA-256 hashes, pins the asset to IPFS, and mints the record on the blockchain.
+- **Manage Students & Passwords:** Create student accounts, update student records, and manage or reset student passwords securely.
+- **Revoke Certificates:** Invalidate compromised or erroneously issued credentials on-chain with full audit history.
+- **View Audit Logs & Stats:** Track all verification attempts, risk scores, and issuance metrics.
+
+### 2. 🛡️ Visitors & Verifiers (Employers / HR / Public)
+- **Instant File Verification:** Drag-and-drop any certificate image (PNG, JPG) or PDF to trigger the live 4-layer check.
+- **Webcam QR Scanner:** Scan printed certificate QR codes using your device's camera for immediate mobile verification.
+- **Inspect Risk Gauge & SHAP Breakdown:** View a visual radial risk meter and interactive SHAP bars detailing why a certificate passed or failed.
+- **Verify On-Chain Proofs:** Check transaction hashes directly on Etherscan or Polygonscan.
+
+### 3. 🎓 Students
+- **Student Dashboard:** Secure login to view all official degrees and certificates issued by their university.
+- **Secure Download:** Download original, high-resolution authentic certificate files directly from IPFS.
+- **Shareable QR Codes:** Generate and share verifiable QR codes with potential employers.
 
 ---
 
@@ -122,7 +155,7 @@ When a certificate is uploaded to `app.py`, the backend runs it through four seq
 │   │   │   │   ├── Verify.jsx               # File dropzone & real-time verification view
 │   │   │   │   ├── Results.jsx              # Comprehensive verification report page
 │   │   │   │   ├── IssueCertificate.jsx     # Institutional form to mint on-chain certificates
-│   │   │   │   ├── ManageStudents.jsx       # Student record management interface
+│   │   │   │   ├── ManageStudents.jsx       # Student record & password management interface
 │   │   │   │   ├── ViewCertificates.jsx     # Searchable repository of issued credentials
 │   │   │   │   └── QRScanner.jsx            # Webcam/mobile camera QR code verification
 │   │   │   └── lib/store.js                 # Global client state management
@@ -146,11 +179,11 @@ When a certificate is uploaded to `app.py`, the backend runs it through four seq
 │       ├── package.json
 │       └── .env.example                     # Blockchain environment template
 │
-├── ai_pipeline.py                           # Original standalone AI verification pipeline
-├── feature_extraction.py                    # Feature extraction functions for certificate layout
+├── ai_pipeline.py                           # Standalone AI verification pipeline
+├── feature_extraction.py                    # 20-feature extraction for certificate layout
 ├── ocr_preprocessing.py                     # Image thresholding and OpenCV preprocessing
 ├── pinata_storage.py                        # Standalone Pinata IPFS upload/fetch tool
-├── train_model.py                           # Model training script for Random Forest / XGBoost
+├── train_model.py                           # Model training script for voting ensemble
 ├── model_v2.pkl                             # Trained scikit-learn anomaly detection model
 ├── synthetic_dataset_v2.csv                 # Synthetic training dataset for model training
 ├── sample_certificate.png                   # Sample legitimate certificate for testing
@@ -161,20 +194,10 @@ When a certificate is uploaded to `app.py`, the backend runs it through four seq
 
 ---
 
-## 👥 User Roles & Features
-
-| Role | What You Can Do in the App |
-| :--- | :--- |
-| **🏛️ Institution** | Issue new tamper-proof certificates to students, automatically pin them to IPFS, mint records on the blockchain, manage the student registry, view issuance history, and revoke certificates if needed. |
-| **🛡️ Verifier / Employer** | Drag and drop any certificate image/PDF or scan its QR code to trigger real-time 4-layer verification. Inspect the Risk Gauge score, examine the SHAP explainability breakdown, and verify the transaction hash on Etherscan/Polygonscan. |
-| **🎓 Student** | Log in to your personal student portal, view all verified academic credentials issued to you, download authenticated original certificates, and share your instant verification QR code. |
-
----
-
 ## 🛠️ Step-by-Step Installation & Running Guide
 
 ### Prerequisites
-Make sure you have installed on your machine:
+Make sure you have installed:
 - **Node.js** (v18.0.0 or higher) & `npm`
 - **Python** (v3.10 or higher) & `pip`
 - **Git**
@@ -184,7 +207,7 @@ Make sure you have installed on your machine:
 
 ### Step 1: Set Up Environment Variables
 
-1. In `blockchain-smart-contract/blockchain/`, create a `.env` file from the example:
+1. In `blockchain-smart-contract/blockchain/`, create a `.env` file from `.env.example`:
    ```bash
    cd blockchain-smart-contract/blockchain
    cp .env.example .env
@@ -196,7 +219,7 @@ Make sure you have installed on your machine:
    PRIVATE_KEY=your_metamask_private_key
    PINATA_JWT=your_pinata_cloud_jwt
    ```
-   *(Note: For purely local testing, you can leave these as defaults; the system has graceful fallbacks).*
+   *(Note: The system contains fallback logic for offline/mock testing if testnet keys are omitted).*
 
 ---
 
@@ -215,7 +238,7 @@ Make sure you have installed on your machine:
    ```bash
    npx hardhat test
    ```
-4. *(Optional)* Deploy the contract to Sepolia testnet:
+4. Deploy the contract to Sepolia testnet (optional):
    ```bash
    npx hardhat run scripts/deploy.js --network sepolia
    ```
@@ -269,37 +292,37 @@ Make sure you have installed on your machine:
 
 ## 🔑 Demo Login Accounts
 
-For testing the application without creating new accounts, use these pre-seeded accounts configured in `users.json`:
+Pre-configured demo accounts in `users.json` for testing without manual signups:
 
-| Role | Username | Password | Notes |
+| Role | Username | Password | Capabilities |
 | :--- | :--- | :--- | :--- |
-| **Institution** | `simat` | `simat@123` | Can issue certificates & manage students |
-| **Verifier** | `testuser` | `password123` | Can run verifications & inspect audit logs |
-| **Student** | `priya22` | `password321` | Can view student profile & issued credentials |
+| **University / Institution** | `simat` | `simat@123` | Issue certificates, manage student passwords, revoke certificates |
+| **Visitor / Verifier** | `testuser` | `password123` | Upload & verify certificates, view audit logs & SHAP charts |
+| **Student** | `priya22` | `password321` | View personal degree, download original certificate, show QR code |
 
 ---
 
-## 🧪 Testing the AI Model with Sample Certificates
+## 🧪 Testing the Model with Sample Certificates
 
-In the repository root, I included test certificates so you can test both legitimate and fraudulent scenarios:
+The repository root includes sample certificates to test both legitimate and fraudulent verification scenarios:
 1. **Legitimate Certificate (`sample_certificate.png`):**
-   - Upload this file on the `/verify` page.
-   - Result: Low risk score (< 15%), all 4 layers pass with green badges, IPFS and Blockchain hashes match.
+   - Upload on `/verify`.
+   - **Result:** Low risk score (< 15%), all 4 layers pass with green checkmarks, dual SHA-256 hashes match on-chain records and IPFS.
 2. **Tampered Certificate (`tampered_certificate.jpg`):**
-   - Upload this file on the `/verify` page.
-   - Result: High risk score (> 80%), AI layer flags visual anomalies, SHAP chart reveals bounding box misalignment and font density discrepancies.
+   - Upload on `/verify`.
+   - **Result:** High risk score (> 80%), AI voting ensemble flags visual anomalies, SHAP chart reveals bounding box misalignment and font density discrepancies.
 
 ---
 
-## 🛡️ Security & Privacy Best Practices
+## 🛡️ Security & Privacy Notice
 
-- **Never Commit Secrets:** Sensitive credentials (`.env`, private keys, Pinata JWTs) are strictly ignored by `.gitignore`.
-- **Zero Heavy Bloat:** All `node_modules/`, `dist/` builds, and `artifacts/` are excluded to keep git operations fast and lightweight.
-- **On-chain Privacy:** Personal student data is hashed using SHA-256 before interacting with the blockchain; only cryptographic proofs and IPFS CIDs reside on-chain.
+- **Never Commit Secrets:** Sensitive credentials (`.env`, private keys, Pinata JWTs) are strictly excluded via `.gitignore`.
+- **Zero Bloat:** All `node_modules/`, `dist/` builds, and `artifacts/` are excluded to keep git lightweight.
+- **Privacy Protection:** Personal student information is hashed before writing to the blockchain; only cryptographic verification digests and IPFS CIDs reside on-chain.
 
 ---
 
-## 🤝 Acknowledgments & Tech Stack
+## 🤝 Tech Stack Overview
 
 - **Machine Learning & OCR:** [EasyOCR](https://github.com/JaidedAI/EasyOCR), [scikit-learn](https://scikit-learn.org/), [SHAP](https://github.com/slundberg/shap), [OpenCV](https://opencv.org/)
 - **Blockchain & Web3:** [Solidity](https://soliditylang.org/), [Hardhat](https://hardhat.org/), [Ethers.js](https://docs.ethers.org/), [Web3.py](https://web3py.readthedocs.io/)
