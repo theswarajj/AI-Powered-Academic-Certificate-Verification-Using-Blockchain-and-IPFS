@@ -1,0 +1,48 @@
+[
+  {
+    "cert_id": "CERT-2026-73573",
+    "student_name": "PRIYA RAMESH NAIR",
+    "degree": "CSE",
+    "register_number": "SPT22CS054",
+    "issue_date": "2026-10-03",
+    "file_hash": "0x1e096d1463121896a9cb7e7f78a4e54d41a5165b6f3e0d77a47f06bf915a81b2",
+    "content_hash": "0xa64b909bb01895fb757c9d0ffaca7ab6d29ad54227b858dca77af6569d99d1b4",
+    "ipfs_cid": "bafkreia6bfwriyysdclkts36p54kjzknigsrmw3phygxpjd7a27zcwubwi",
+    "file_name": "CERT-2026-73573.png",
+    "tx_hash": "f0b191b33640fda1804d99ce390aff05824afd9a45da611d597f6954db0ea2c9",
+    "issued_by": "simat",
+    "issued_at": "2026-10-03T17:45:24.536097",
+    "status": "active"
+  },
+  {
+    "cert_id": "CERT-2026-81436",
+    "student_name": "ss",
+    "degree": "CSE",
+    "register_number": "SPT22CS054",
+    "issue_date": "2026-10-03",
+    "file_hash": "0x1e096d1463121896a9cb7e7f78a4e54d41a5165b6f3e0d77a47f06bf915a81b2",
+    "content_hash": "0x7172cc4b1b6a11ffc5e60403603ddddebe4cd420d2c4cf1101ed0e9783b29e86",
+    "ipfs_cid": "bafkreia6bfwriyysdclkts36p54kjzknigsrmw3phygxpjd7a27zcwubwi",
+    "file_name": "CERT-2026-81436.png",
+    "tx_hash": "81aa6ddbdcd303ad2c3ae11bd33c2785b8f55c513f549c39bc4e44bd9506026c",
+    "issued_by": "simat",
+    "issued_at": "2026-10-03T18:24:36.670429",
+    "status": "revoked"
+  },
+  {
+    "cert_id": "CERT-2026-29749",
+    "student_name": "ARJUN MENON",
+    "degree": "b.tech",
+    "register_number": "21EC04117",
+    "issue_date": "2025-06-06",
+    "file_name": "CERT-2026-29749.jpeg",
+    "file_hash": "0xffe965a7f167610dc4a48212105b2c58b510d2cfedcece671963ee8329e765bf",
+    "content_hash": "0x1c45ac4ba398929a3b8a4b5281017fd0cf1cf3395c34de1921b1663fdc562053",
+    "ipfs_cid": "bafkreih75fs2p4lhmeg4jjecciifwlcywuinft7nz3hgogld52bstz3fx4",
+    "tx_hash": "e2cce93927d8bc9770e5b1b838f2862303b93caf199a265dbd58d2c2aeefb363",
+    "issued_by": "simat",
+    "issued_at": "2026-10-25T18:55:15.731526",
+    "status": "active",
+    "student_username": "arjun4117"
+  }
+]

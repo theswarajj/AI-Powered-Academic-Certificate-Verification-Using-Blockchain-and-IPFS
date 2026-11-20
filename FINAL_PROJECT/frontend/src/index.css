@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   BASE STYLES — Premium White Theme
+   ============================================================ */
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #FFFFFF;
+    color: #111827;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+  }
+
+  ::selection {
+    background: rgba(99, 102, 241, 0.15);
+    color: #111827;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F7F8FA;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D1D5DB;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9CA3AF;
+  }
+}
+
+/* ============================================================
+   COMPONENT STYLES
+   ============================================================ */
+
+@layer components {
+  /* ---- Cards ---- */
+  .glass-card {
+    @apply bg-white border border-border-subtle rounded-card;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.04);
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+  }
+  .glass-card-hover:hover {
+    @apply border-primary-200;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06), 0 0 0 1px rgba(99, 102, 241, 0.08);
+    transform: translateY(-3px);
+  }
+
+  /* ---- Buttons ---- */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-2.5
+           bg-primary hover:bg-primary-hover text-white font-semibold
+           rounded-btn transition-all duration-200;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.30);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 6px 24px rgba(99, 102, 241, 0.40);
+    transform: translateY(-1px);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-2.5
+           bg-white border-2 border-slate-300 text-slate-900
+           font-semibold rounded-btn transition-all duration-200;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    color: #0f172a;
+  }
+  .btn-outline:hover {
+    @apply border-primary-500 text-primary-600 bg-primary-50/70;
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.15);
+    color: #4f46e5;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2
+           bg-transparent text-text-secondary font-medium
+           rounded-btn transition-all duration-200;
+  }
+  .btn-ghost:hover {
+    @apply bg-base-elevated text-text-primary;
+  }
+
+  /* ---- Inputs ---- */
+  .input-field {
+    @apply w-full px-4 py-3 bg-white border border-border-subtle
+           rounded-btn text-text-primary placeholder:text-text-tertiary
+           focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10
+           transition-all duration-200;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  .input-field:hover {
+    @apply border-border-strong;
+  }
+
+  /* Shorthand aliases for IssueCertificate */
+  .input {
+    @apply input-field;
+  }
+  .label {
+    @apply block text-sm font-medium text-text-secondary mb-2;
+  }
+
+  /* ---- Badge / Pill ---- */
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1
+           text-xs font-semibold rounded-pill;
+  }
+
+  /* ---- Section container ---- */
+  .section-container {
+    @apply max-w-[1280px] mx-auto px-6;
+  }
+
+  /* ---- Gradient text ---- */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #6366F1, #8B5CF6, #EC4899);
+  }
+
+  /* ---- Layer gradient backgrounds ---- */
+  .gradient-hash {
+    background: linear-gradient(135deg, #6366F1, #818CF8);
+  }
+  .gradient-blockchain {
+    background: linear-gradient(135deg, #3B82F6, #6366F1);
+  }
+  .gradient-ipfs {
+    background: linear-gradient(135deg, #06B6D4, #3B82F6);
+  }
+  .gradient-ai {
+    background: linear-gradient(135deg, #8B5CF6, #EC4899);
+  }
+
+  /* ---- Monospace data display ---- */
+  .mono-data {
+    @apply font-mono text-sm text-text-secondary bg-base-elevated
+           px-2.5 py-1 rounded-lg inline-flex items-center gap-1;
+  }
+
+  /* ---- Verdict banners ---- */
+  .verdict-banner {
+    @apply rounded-card p-8 border text-center;
+  }
+  .verdict-verified {
+    @apply bg-emerald-50 border-emerald-200 text-emerald-700;
+  }
+  .verdict-revoked, .verdict-hash_mismatch {
+    @apply bg-red-50 border-red-200 text-red-700;
+  }
+  .verdict-content_mismatch {
+    @apply bg-red-50 border-red-200 text-red-800;
+  }
+  .verdict-requires_investigation {
+    @apply bg-amber-50 border-amber-200 text-amber-700;
+  }
+  .verdict-not_found {
+    @apply bg-gray-50 border-gray-200 text-gray-600;
+  }
+  .verdict-partially_verified {
+    @apply bg-blue-50 border-blue-200 text-blue-700;
+  }
+}
+
+/* ============================================================
+   UTILITY / ANIMATIONS
+   ============================================================ */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ---- Hero subtle background ---- */
+.particle-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-color: #FFFFFF;
+  background-image: 
+    radial-gradient(circle, rgba(99, 102, 241, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 18% 18%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 82% 24%, rgba(139, 92, 246, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 50% 70%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+  background-size: 32px 32px, 100% 100%, 100% 100%, 100% 100%;
+  animation: bg-shift 20s ease-in-out infinite alternate;
+}
+
+@keyframes bg-shift {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04) translate(0.8%, 0.8%); }
+  100% { transform: scale(1) translate(-0.8%, -0.8%); }
+}
+
+/* ---- Luxury White Card ---- */
+.luxury-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.02),
+    0 12px 36px -8px rgba(15, 23, 42, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  border-radius: 24px;
+}
+
+.luxury-card-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.luxury-card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.02),
+    0 20px 48px -12px rgba(99, 102, 241, 0.12),
+    0 0 0 1px rgba(99, 102, 241, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* ---- Laser Scan Effect for Verification Card ---- */
+@keyframes laser-sweep {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.laser-beam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #6366F1, #8B5CF6, #06B6D4, transparent);
+  box-shadow: 0 0 16px 2px rgba(99, 102, 241, 0.6);
+  animation: laser-sweep 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ---- Hologram Sheen ---- */
+@keyframes holo-shimmer {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(200%) rotate(45deg); }
+}
+
+.hologram-sheen {
+  position: relative;
+  overflow: hidden;
+}
+.hologram-sheen::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.4) 45%,
+    rgba(199, 210, 254, 0.5) 50%,
+    transparent 55%
+  );
+  transform: rotate(45deg);
+  animation: holo-shimmer 6s infinite ease-in-out;
+  pointer-events: none;
+}
+
+/* ---- Animated gradient text ---- */
+.text-gradient-animated {
+  background: linear-gradient(to right, #6366F1, #8B5CF6, #EC4899, #6366F1);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+/* ---- Shimmer button effect ---- */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+  transform: skewX(-20deg);
+  animation: shimmer-btn 3s infinite;
+}
+
+@keyframes shimmer-btn {
+  0% { left: -100%; }
+  20% { left: 200%; }
+  100% { left: 200%; }
+}
+
+/* ---- Risk gauge (SVG) ---- */
+.risk-gauge-track {
+  fill: none;
+  stroke: #E5E7EB;
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+
+.risk-gauge-fill {
+  fill: none;
+  stroke-width: 12;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.2s ease-in-out;
+}
+
+/* ---- Layer progress glow ---- */
+.layer-glow {
+  box-shadow: 0 0 24px var(--glow-color, rgba(99, 102, 241, 0.2));
+}
+
+/* ---- Scanning animation ---- */
+@keyframes scan-sweep {
+  0% { top: 0; }
+  100% { top: calc(100% - 2px); }
+}
+.scan-line-anim {
+  animation: scan-sweep 2s ease-in-out infinite;
+}
+
+/* ---- Animated gradient border ---- */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #6366F1, #8B5CF6, #EC4899, #6366F1);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  background-size: 300% 300%;
+  animation: gradientShift 4s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---- Section divider ---- */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #E5E7EB 20%, #E5E7EB 80%, transparent);
+}

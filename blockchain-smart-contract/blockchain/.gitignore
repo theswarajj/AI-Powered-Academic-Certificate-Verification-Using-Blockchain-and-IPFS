@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Hardhat & Build Cache
+artifacts/
+cache/
+typechain/
+typechain-types/
+coverage/
+coverage.json
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log

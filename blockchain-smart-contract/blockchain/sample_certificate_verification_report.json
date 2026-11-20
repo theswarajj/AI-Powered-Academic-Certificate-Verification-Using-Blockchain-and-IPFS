@@ -1,0 +1,237 @@
+{
+  "timestamp": "2026-09-24T22:45:09.477143",
+  "certificate_id": "CERT-2026-00891",
+  "certificate_file": "sample_certificate.png",
+  "final_verdict": "VERIFIED",
+  "risk_score": 0,
+  "confidence_band": "HIGH_CONFIDENCE_GENUINE",
+  "layers_checked": 4,
+  "risk_breakdown": {
+    "hash": {
+      "risk": 0,
+      "max": 30,
+      "available": true
+    },
+    "blockchain": {
+      "risk": 0,
+      "max": 25,
+      "available": true
+    },
+    "ipfs": {
+      "risk": 0,
+      "max": 15,
+      "available": true
+    },
+    "ai": {
+      "risk": 0,
+      "max": 30,
+      "available": true
+    }
+  },
+  "fields_extracted": {
+    "register_number": "22c508234",
+    "certificate_id": "cert-2026-00891",
+    "issue_date": "12/05/2026",
+    "degree": "b.tech",
+    "student_name": "Priya Ramesh Nair",
+    "missing_field_count": 0
+  },
+  "hash_verification": {
+    "file_hash_computed": "1e096d1463121896a9cb7e7f78a4e54d41a5165b6f3e0d77a47f06bf915a81b2",
+    "file_hash_onchain": "1e096d1463121896a9cb7e7f78a4e54d41a5165b6f3e0d77a47f06bf915a81b2",
+    "file_hash_match": true,
+    "content_hash_computed": "b217f2812e8eb67b28b1f4fa0693b1b68c48539dfa11ab16443e81f14c18171b",
+    "content_hash_onchain": "4afa3b23234da069ea8b2bbb3f5d40576096b6ee55c5b34e39d58e062e79ecd4",
+    "content_hash_match": false
+  },
+  "blockchain_verification": {
+    "layer_available": true,
+    "record_exists": true,
+    "revoked": false,
+    "issuer_address": "0x6C67358CF2B0D5a319136fD9fD19DAC2131c890c",
+    "issuer_known": false,
+    "issuer_name": null,
+    "onchain_timestamp": 1790232540,
+    "issuance_date": "2026-09-24T06:49:00Z",
+    "timestamp_coherent": true,
+    "warnings": []
+  },
+  "ipfs_verification": {
+    "layer_available": true,
+    "cid": "bafkreia6bfwriyysdclkts36p54kjzknigsrmw3phygxpjd7a27zcwubwi",
+    "file_available": true,
+    "content_integrity": true,
+    "ipfs_file_hash": "1e096d1463121896a9cb7e7f78a4e54d41a5165b6f3e0d77a47f06bf915a81b2",
+    "warnings": []
+  },
+  "ai_analysis": {
+    "ml_prediction": "LIKELY_GENUINE",
+    "fraud_probability_pct": 0.0,
+    "hard_rule_failures": [],
+    "final_ai_verdict": "LIKELY_GENUINE",
+    "shap_explanations": [
+      {
+        "feature": "text_position_variance",
+        "value": 18801.111111111113,
+        "shap_value": -0.11754074106992655,
+        "pushes_toward": "genuine",
+        "message": "Document structure is consistent with a standard template"
+      },
+      {
+        "feature": "institution_name_match_score",
+        "value": 100.0,
+        "shap_value": -0.10197136467718661,
+        "pushes_toward": "genuine",
+        "message": "Institution name closely matches a known institution"
+      },
+      {
+        "feature": "ela_unevenness_score",
+        "value": 4.312345027923584,
+        "shap_value": -0.07101734045510474,
+        "pushes_toward": "genuine",
+        "message": "Image compression pattern is consistent across the document"
+      },
+      {
+        "feature": "low_confidence_word_ratio",
+        "value": 0.0,
+        "shap_value": -0.05589792539315092,
+        "pushes_toward": "genuine",
+        "message": "Nearly all text was read with high confidence"
+      },
+      {
+        "feature": "ocr_avg_confidence",
+        "value": 79.53626912006591,
+        "shap_value": -0.0467059472986627,
+        "pushes_toward": "genuine",
+        "message": "Text recognition confidence is high and consistent"
+      },
+      {
+        "feature": "ela_multi_quality_max",
+        "value": 4.529067039489746,
+        "shap_value": -0.04399788439985073,
+        "pushes_toward": "genuine",
+        "message": "Multi-quality compression analysis shows uniform compression"
+      },
+      {
+        "feature": "font_height_variance",
+        "value": 49.95061728395062,
+        "shap_value": -0.03189737693253699,
+        "pushes_toward": "genuine",
+        "message": "Font sizing is consistent throughout the document"
+      },
+      {
+        "feature": "missing_field_count",
+        "value": 0.0,
+        "shap_value": -0.014926384967556975,
+        "pushes_toward": "genuine",
+        "message": "All expected certificate fields were detected"
+      },
+      {
+        "feature": "horizontal_alignment_score",
+        "value": 50.7270887371687,
+        "shap_value": 0.01032479428240923,
+        "pushes_toward": "suspicious",
+        "message": "Text blocks are poorly aligned, suggesting content was pasted in"
+      },
+      {
+        "feature": "edge_density",
+        "value": 0.03777,
+        "shap_value": -0.008667343358061798,
+        "pushes_toward": "genuine",
+        "message": "Edge pattern is consistent with a cleanly produced document"
+      },
+      {
+        "feature": "certificate_id_format_valid",
+        "value": 1.0,
+        "shap_value": -0.004813283358580828,
+        "pushes_toward": "genuine",
+        "message": "Certificate ID follows the expected format"
+      },
+      {
+        "feature": "confidence_variance",
+        "value": 13.215128133542411,
+        "shap_value": -0.004510164765771468,
+        "pushes_toward": "genuine",
+        "message": "OCR confidence is uniform across the document"
+      },
+      {
+        "feature": "text_density_ratio",
+        "value": 0.18742666666666666,
+        "shap_value": -0.002080069341627553,
+        "pushes_toward": "genuine",
+        "message": "Text density is consistent with a standard certificate"
+      },
+      {
+        "feature": "register_number_format_valid",
+        "value": 1.0,
+        "shap_value": -0.0018078582991327518,
+        "pushes_toward": "genuine",
+        "message": "Register number follows the expected format"
+      },
+      {
+        "feature": "text_block_count",
+        "value": 9.0,
+        "shap_value": -0.0012115540132060364,
+        "pushes_toward": "genuine",
+        "message": "Document contains a typical amount of text content"
+      },
+      {
+        "feature": "degree_field_recognized",
+        "value": 1.0,
+        "shap_value": -0.0011377373585940212,
+        "pushes_toward": "genuine",
+        "message": "Degree information was clearly recognized"
+      },
+      {
+        "feature": "signature_area_detected",
+        "value": 1.0,
+        "shap_value": -0.0010468693789355036,
+        "pushes_toward": "genuine",
+        "message": "A signature or seal area was detected"
+      },
+      {
+        "feature": "aspect_ratio",
+        "value": 1.6666666666666667,
+        "shap_value": -0.0005221921587472306,
+        "pushes_toward": "genuine",
+        "message": "Image dimensions match standard certificate proportions"
+      },
+      {
+        "feature": "issue_date_valid",
+        "value": 1.0,
+        "shap_value": -0.00030093276010912073,
+        "pushes_toward": "genuine",
+        "message": "Issue date is present and correctly formatted"
+      },
+      {
+        "feature": "issue_date_plausible_range",
+        "value": 1.0,
+        "shap_value": -0.0001328744815348476,
+        "pushes_toward": "genuine",
+        "message": "Issue date falls within a plausible range"
+      }
+    ]
+  },
+  "feature_vector": {
+    "missing_field_count": 0,
+    "ocr_avg_confidence": 79.5363,
+    "register_number_format_valid": 1.0,
+    "certificate_id_format_valid": 1.0,
+    "issue_date_valid": 1.0,
+    "issue_date_plausible_range": 1.0,
+    "institution_name_match_score": 100.0,
+    "text_block_count": 9,
+    "text_position_variance": 18801.1111,
+    "font_height_variance": 49.9506,
+    "degree_field_recognized": 1.0,
+    "ela_unevenness_score": 4.3123,
+    "low_confidence_word_ratio": 0.0,
+    "aspect_ratio": 1.6667,
+    "edge_density": 0.0378,
+    "ela_multi_quality_max": 4.5291,
+    "horizontal_alignment_score": 50.7271,
+    "confidence_variance": 13.2151,
+    "signature_area_detected": 1.0,
+    "text_density_ratio": 0.1874
+  }
+}

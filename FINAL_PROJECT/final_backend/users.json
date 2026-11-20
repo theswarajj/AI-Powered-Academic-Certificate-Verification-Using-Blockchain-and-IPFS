@@ -1,0 +1,39 @@
+{
+  "testuser": {
+    "password_hash": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+    "current_password": "password123",
+    "role": "verifier",
+    "full_name": "Test User",
+    "wallet_address": "",
+    "created_at": "2026-09-26T12:11:38.915445"
+  },
+  "simat": {
+    "password_hash": "b92bc4ea34a101c1a15c8d45302511f674707fbd8cae1c3cbcb14d44a1e3663b",
+    "current_password": "simat@123",
+    "role": "institution",
+    "full_name": "SIMAT University",
+    "wallet_address": "0x6C67358CF2B0D5a319136fD9fD19DAC2131c890c",
+    "created_at": "2026-09-26T12:25:35.133833"
+  },
+  "priya22": {
+    "password_hash": "a20aff106fe011d5dd696e3b7105200ff74331eeb8e865bb80ebd82b12665a07",
+    "current_password": "password321",
+    "role": "student",
+    "full_name": "PRIYA RAMESH NAIR",
+    "register_number": "SPT22CS054",
+    "institution": "simat",
+    "created_at": "2026-10-04T11:03:57.648772",
+    "updated_at": "2026-10-18T11:17:25.779696"
+  },
+  "arjun4117": {
+    "password_hash": "661c27b21dc0a3178d8f95a141642272b66f792ac96734592e00ff9c1f779c31",
+    "current_password": "Arjun#4794",
+    "role": "student",
+    "full_name": "ARJUN MENON",
+    "register_number": "21EC04117",
+    "institution": "simat",
+    "auto_generated": true,
+    "created_at": "2026-10-25T19:11:38.330535",
+    "updated_at": "2026-10-25T19:11:38.330535"
+  }
+}
