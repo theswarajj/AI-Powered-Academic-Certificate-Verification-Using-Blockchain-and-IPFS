@@ -194,6 +194,25 @@ When a certificate is uploaded to `app.py`, the backend executes four sequential
 
 ---
 
+## 🌐 API & WebSocket Reference (`app.py`)
+
+The backend server in `FINAL_PROJECT/final_backend/app.py` exposes the following core endpoints:
+
+| Method / Protocol | Endpoint | Access Role | Description |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/api/auth/login` | Public | Authenticates user credentials and returns a signed JWT. |
+| `POST` | `/api/verify` | Public / Verifier | Uploads certificate file and runs the complete 4-layer verification. |
+| `Socket.IO` | `start_verification` | Public / Verifier | Triggers real-time streamed layer progress updates to the frontend. |
+| `POST` | `/api/certificates/issue` | Institution | Uploads, generates dual hashes, pins to IPFS, and mints on-chain. |
+| `POST` | `/api/certificates/<id>/revoke`| Institution | Revokes an issued certificate on-chain. |
+| `GET` | `/api/institution/students` | Institution | Retrieves student roster for the institution. |
+| `PUT` | `/api/institution/students/<id>`| Institution | Updates student details and resets passwords. |
+| `GET` | `/api/certificates` | Authenticated | Lists issued certificates filtered by user role. |
+| `GET` | `/api/qr/<cert_id>` | Public | Generates and serves dynamic QR code image for verification. |
+| `GET` | `/api/health` | Public | Healthcheck endpoint reporting model, RPC, and IPFS status. |
+
+---
+
 ## 🛠️ Step-by-Step Installation & Running Guide
 
 ### Prerequisites
@@ -319,6 +338,21 @@ The repository root includes sample certificates to test both legitimate and fra
 - **Never Commit Secrets:** Sensitive credentials (`.env`, private keys, Pinata JWTs) are strictly excluded via `.gitignore`.
 - **Zero Bloat:** All `node_modules/`, `dist/` builds, and `artifacts/` are excluded to keep git lightweight.
 - **Privacy Protection:** Personal student information is hashed before writing to the blockchain; only cryptographic verification digests and IPFS CIDs reside on-chain.
+
+---
+
+## 👨‍💻 Author & Engineering Credits
+
+This project was conceptualized, architected, and engineered by:
+
+### **Swaraj Krishna P P**
+- 🎓 **Academic Background:** Computer Science and Engineering Graduate (Class of 2026)
+- 🏛️ **University:** APJ Abdul Kalam Technological University (KTU)
+- 💡 **Specialization:** AI / ML Enthusiast, Decentralized Systems & Full-Stack Web3
+- 📬 **Email:** [swrjkrishna@gmail.com](mailto:swrjkrishna@gmail.com)
+
+> **Attribution Notice:**  
+> All conceptualization, full-stack architecture, machine learning modeling (OCR extraction, 20-feature voting ensemble, SHAP explainability), smart contract development, and platform engineering credits for this project belong to **Swaraj Krishna P P**.
 
 ---
 
